@@ -1,17 +1,18 @@
 {
-  "name": "selenium-webdriver-coverage",
-  "version": "1.0.0",
-  "description": "",
-  "main": "",
-  "scripts": {
-    "test": "mocha --require fixtures.js"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-plus": "^1.0.6",
-    "mocha": "^10.3.0",
-    "monocart-coverage-reports": "^2.7.5",
-    "selenium-webdriver": "^4.18.1"
-  }
+    "name": "selenium-webdriver-coverage",
+    "version": "1.0.0",
+    "description": "Selenium Webdriver V8 Coverage Example",
+    "main": "",
+    "scripts": {
+        "test": "mocha --require fixtures.js"
+    },
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {
+        "eslint": "^8.57.0",
+        "eslint-config-plus": "^1.0.6",
+        "mocha": "^10.3.0",
+        "monocart-coverage-reports": "^2.7.6",
+        "selenium-webdriver": "^4.18.1"
+    }
 }
