@@ -1,10 +1,11 @@
+const path = require('path');
+const { pathToFileURL } = require('url');
 const Chrome = require('selenium-webdriver/chrome');
 const { Builder, Browser } = require('selenium-webdriver');
-const assert = require('assert');
 
 const MCR = require('monocart-coverage-reports');
 
-describe('First script', function() {
+describe('Edge test', function() {
     this.timeout(5000);
 
     let driver;
@@ -15,9 +16,8 @@ describe('First script', function() {
 
         const options = new Chrome.Options();
         options.addArguments('--headless=new');
-        // options.addArguments(`--remote-debugging-port=${port}`);
 
-        driver = await new Builder().forBrowser(Browser.CHROME).setChromeOptions(options).build();
+        driver = await new Builder().forBrowser(Browser.EDGE).setEdgeOptions(options).build();
 
         mcr = MCR();
         await mcr.loadConfig();
@@ -37,11 +37,12 @@ describe('First script', function() {
 
     });
 
-    it('First Selenium script with mocha', async function() {
-        await driver.get('https://www.selenium.dev/documentation/webdriver/');
+    it('Edge case', async function() {
+        await driver.get(pathToFileURL(path.resolve('test/mock/index.html')).toString());
 
-        const title = await driver.getTitle();
-        assert(title.startsWith('WebDriver'));
+        await new Promise((resolve) => {
+            setTimeout(resolve, 100);
+        });
 
     });
 

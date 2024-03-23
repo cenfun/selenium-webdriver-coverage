@@ -4,9 +4,12 @@ module.exports = {
     reports: ['v8', 'console-details'],
 
     entryFilter: {
-        '**/*jquery*': false,
-        '**/prism.*': true,
-        '**/main*.js': true
+        '**/*': true
+    },
+
+    sourceFilter: {
+        '**/webpack/**': false,
+        '**/*': true
     },
 
     outputDir: './coverage-reports'
